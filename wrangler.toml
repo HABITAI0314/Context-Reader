@@ -1,0 +1,17 @@
+# Cloudflare Pages 配置。静态页面来自 dist，/api 由 functions/ 目录提供。
+name = "context-reader"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"
+
+# 云同步：记录存 D1
+[[d1_databases]]
+binding = "DB"
+database_name = "context-reader"
+database_id = "584674e6-ef3c-40d7-b8e9-b4ba46677fe1"
+
+# 书籍文件存在 R2。同账号可以改用绑定：
+# [[r2_buckets]]
+# binding = "BOOKS"
+# bucket_name = "context-reader-books"
+# 现在用的是跨账号 S3 接口，凭据通过机密设置：
+# R2_S3_ENDPOINT、R2_ACCESS_KEY_ID、R2_SECRET_ACCESS_KEY、R2_BUCKET

@@ -1,0 +1,29 @@
+{
+  "name": "context-reader",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc --noEmit && vite build",
+    "start": "node server/index.mjs",
+    "icons": "node scripts/gen-icons.mjs",
+    "cf:dev": "npm run build && wrangler pages dev",
+    "cf:deploy": "npm run build && wrangler pages deploy"
+  },
+  "dependencies": {
+    "epubjs": "^0.3.93",
+    "idb": "^8.0.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "wrangler": "^4.160.1"
+  }
+}

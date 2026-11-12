@@ -1,0 +1,12 @@
+# Cloudflare Pages 响应头：带 hash 的资源长期缓存，入口和 service worker 每次校验
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/index.html
+  Cache-Control: no-cache
+
+/sw.js
+  Cache-Control: no-cache
+
+/manifest.webmanifest
+  Cache-Control: no-cache
